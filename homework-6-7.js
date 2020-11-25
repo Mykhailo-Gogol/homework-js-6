@@ -85,9 +85,9 @@ const users = [
     age: 39,
   },
 ];
-//Получи массив только неактивных пользователей (отфильтруй по значению свойства isActive)
-//Используй деструктурирующее присваивание для параметра функции ({isActive}) без пробелов и переносов на новую строку.
-//Используй оператор !.
-const getInactiveUsers = (array) => array.filter(({ isActive }) => !isActive);
+//Получи общую сумму баланса (сумму значений свойства balance) всех пользователей.
+//Используй деструктурирующее присваивание для параметра функции {balance} без пробелов и переносов на новую строку
+const calculateTotalBalance = (array) =>
+  array.reduce((accumulator, { balance }) => accumulator + balance, 0);
 
-//console.log(getInactiveUsers(users));
+//console.log(calculateTotalBalance(users));

@@ -85,9 +85,10 @@ const users = [
     age: 39,
   },
 ];
-//Получи массив только неактивных пользователей (отфильтруй по значению свойства isActive)
-//Используй деструктурирующее присваивание для параметра функции ({isActive}) без пробелов и переносов на новую строку.
-//Используй оператор !.
-const getInactiveUsers = (array) => array.filter(({ isActive }) => !isActive);
+//Получи массив из объектов, которые состоят только из свойств name и email тех пользователей, которые попадают в возрастную категорию от min до max лет (значение свойства age).
+const getUsersWithAge = (array, min, max) =>
+  array
+    .filter(({ age }) => age > min && age < max)
+    .map(({ name, email }) => ({ name, email }));
 
-//console.log(getInactiveUsers(users));
+//console.log(getUsersWithAge(users, 20, 30));

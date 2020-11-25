@@ -85,9 +85,15 @@ const users = [
     age: 39,
   },
 ];
-//Получи массив только неактивных пользователей (отфильтруй по значению свойства isActive)
-//Используй деструктурирующее присваивание для параметра функции ({isActive}) без пробелов и переносов на новую строку.
-//Используй оператор !.
-const getInactiveUsers = (array) => array.filter(({ isActive }) => !isActive);
+//Получи массив имен всех пользователей у которых есть друг с заданным именем.
+//Используй деструктурирующее присваивание для параметра функции {friends}и ({name}) без пробелов и переносов на новую строку
+const getUsersWithFriend = (array, friendName) =>
+  array
+    .filter(function ({ friends }) {
+      return friends.includes(friendName);
+    })
+    .map(function ({ name }) {
+      return name;
+    });
 
-//console.log(getInactiveUsers(users));
+//console.log(getUsersWithFriend(users, "Briana Decker"));

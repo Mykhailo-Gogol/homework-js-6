@@ -85,3 +85,8 @@ const users = [
     age: 39,
   },
 ];
+//Получи массив объектов пользователей, отобранный по цвету глаз (свойство eyeColor), используя деструктурирующее присваивание для параметра функции ({eyeColor}) без пробелов и переносов на новую строку.
+const getUsersWithEyeColor = (array, color) =>
+  array.filter(({ eyeColor }) => eyeColor === color);
+
+//console.log(getUsersWithEyeColor(users, "blue"));

@@ -85,9 +85,25 @@ const users = [
     age: 39,
   },
 ];
-//Получи массив только неактивных пользователей (отфильтруй по значению свойства isActive)
-//Используй деструктурирующее присваивание для параметра функции ({isActive}) без пробелов и переносов на новую строку.
-//Используй оператор !.
-const getInactiveUsers = (array) => array.filter(({ isActive }) => !isActive);
+// Write code under this line
+const getSortedUniqueSkills = (array) =>
+  array
+    .reduce((acc, { skills }) => {
+      return acc.concat(skills);
+    }, [])
+    .sort()
+    .filter(function (item, pos, self) {
+      return self.indexOf(item) == pos;
+    });
 
-//console.log(getInactiveUsers(users));
+//console.log(getSortedUniqueSkills(users));
+/* [ 'adipisicing', 'amet',
+ 'anim', 'commodo',
+ 'culpa', 'elit',
+ 'ex', 'ipsum',
+ 'irure', 'laborum',
+ 'lorem', 'mollit',
+ 'non', 'nostrud',
+ 'nulla', 'proident',
+ 'tempor', 'velit',
+ 'veniam' ]; */

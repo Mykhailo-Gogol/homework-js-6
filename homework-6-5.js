@@ -85,3 +85,9 @@ const users = [
     age: 39,
   },
 ];
+//Получи объект пользователя (не массив) по уникальному значению свойства email.
+//Используй деструктурирующее присваивание для параметра функции ({email}) без пробелов и переносов на новую строку.
+const getUserWithEmail = (array, mail) =>
+  array.find(({ email }) => email === mail);
+
+//console.log(getUserWithEmail(users, "rossvazquez@xinware.com"));

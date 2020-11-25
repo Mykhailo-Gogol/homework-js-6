@@ -85,3 +85,9 @@ const users = [
     age: 39,
   },
 ];
+//Получи массив имен пользователей (значение свойства name) по полу (значение свойства gender).
+//Используй деструктурирующее присваивание для параметра функции ({name}) без пробелов и переносов на новую строку.
+const getUsersWithGender = (array, myGender) =>
+  array.filter(({ gender }) => gender === myGender).map(({ name }) => name);
+
+//console.log(getUsersWithGender(users, "male"));

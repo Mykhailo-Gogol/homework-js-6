@@ -85,9 +85,11 @@ const users = [
     age: 39,
   },
 ];
-//Получи массив только неактивных пользователей (отфильтруй по значению свойства isActive)
-//Используй деструктурирующее присваивание для параметра функции ({isActive}) без пробелов и переносов на новую строку.
-//Используй оператор !.
-const getInactiveUsers = (array) => array.filter(({ isActive }) => !isActive);
+//Получи массив имен (поле name) людей, отсортированных в зависимости от количества их друзей (поле friends)
+//Избегаем мутации исходного массива: т.к. метод sort изменяет (мутирует) исходный массив, то следует сделать копию массива и сортировать уже копию, а не исходный массив.
+const getNamesSortedByFriendsCount = (array) =>
+  [...array]
+    .sort((a, b) => a.friends.length - b.friends.length)
+    .map(({ name }) => name);
 
-//console.log(getInactiveUsers(users));
+//console.log(getNamesSortedByFriendsCount(users));

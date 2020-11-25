@@ -85,3 +85,8 @@ const users = [
     age: 39,
   },
 ];
+
+//Получи массив имен всех пользователей (свойство name) используя деструктурирующее присваивание для параметра функции ({name}) без пробелов и переносов на новую строку.
+const getUserNames = (array) => array.map(({ name }) => name);
+
+//console.log(getUserNames(users));
